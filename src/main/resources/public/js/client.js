@@ -1,4 +1,4 @@
-const BASE_URL_CLIENT = 'http://141.148.81.115'
+const BASE_URL_CLIENT = 'http://localhost:8090'
 function obtenerCliente(){
     $.ajax({
         url: BASE_URL_CLIENT+'/api/Client/all',
@@ -16,7 +16,7 @@ function mostrarClientes(items){
     $('#consultarCli').attr('onclick', 'ocultarRespuestaClient()');
 
     let myTable=
-        `<table style="border: 1px solid black">
+        `<table class="table table-active">  
         <thead>
             <th>Name</th>
             <th>Email</th>

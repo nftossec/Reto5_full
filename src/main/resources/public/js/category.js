@@ -1,4 +1,4 @@
-const BASE_URL_CAT = 'http://141.148.81.115'
+const BASE_URL_CAT = 'http://localhost:8090'
 function obtenerCategoria(){
     $.ajax({
         url: BASE_URL_CAT+'/api/Category/all',
@@ -16,7 +16,7 @@ function mostrarCategoria(items){
     $('#consultarCat').attr('onclick', 'ocultarRespuestaCategory()');
 
     let myTable=
-        `<table style="border: 1px solid black">
+        `<table class="table table-active">
         <thead>
                <th>nombre</th>
             <th>descripcion</th>

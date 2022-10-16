@@ -1,4 +1,4 @@
-const BASE_URL_BIKE = 'http://141.148.81.115';
+const BASE_URL_BIKE = 'http://localhost:8090'
 
 function traerInformacion(){
     $.ajax({
@@ -17,7 +17,7 @@ function pintarRespuesta(items){
     $('#consultarBici').attr('onclick', 'ocultarRespuestaBike()');
 
     let myTable=
-        `<table style="border: 1px solid black">
+        `<table class="table table-active">
         <thead>
             <th>Marca</th>
             <th>Modelo</th>

@@ -1,6 +1,6 @@
 
 
-const BASE_URL_MSG = 'http://141.148.81.115/api/Message';
+const BASE_URL_MSG = 'http://localhost:8090/api/Message';
 
 function leerMensajes(){
     $.ajax({
@@ -23,7 +23,7 @@ function mostrarInfoMensajes(res){
 
     $('#listaMensajes').empty();
     $('#listaMensajes').append(
-        `<table id="tablaMensajes" style="border: 1px solid black">
+        `<table class="table table-active" id="tablaMensajes">
             <thead>
                 <th>Cliente</th>
                 <th>Bicicleta</th>

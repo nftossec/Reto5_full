@@ -1,4 +1,4 @@
-const BASE_URL_ADMOUSER ='http://141.148.81.115'
+const BASE_URL_ADMOUSER ='http://localhost:8090'
 
 function getAdmoUser(){
     $.ajax({
@@ -17,7 +17,7 @@ function pintarRespuestaAdmoUser(items){
     $('#consultarAdmoUser').attr('onclick', 'ocultarRespuesta()');
 
     let myTable=
-        `<table style="border: 1px solid black">
+        `<table class="table table-active">
         <thead>
             <th>Nombre</th>
             <th>Correo</th>

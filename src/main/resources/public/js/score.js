@@ -1,4 +1,4 @@
-const BASE_URL_SCORE = 'http://141.148.81.115/api/Score';
+const BASE_URL_SCORE = 'http://localhost:8090/api/Score';
 
 function saveScore(idReservation){
     let dataToSend;

@@ -1,4 +1,4 @@
-const BASE_URL_RES = 'http://141.148.81.115/api/Reservation';
+const BASE_URL_RES = 'http://localhost:8090/api/Reservation';
 
 function listReservations(){
     $.ajax({
@@ -21,7 +21,7 @@ function loadReservations(res){
 
     $('#reservationList').empty();
     $('#reservationList').append(
-        `<table id="reservationTable" style="border: 1px solid black"> 
+        `<table class="table table-active" id="reservationTable" > 
             <thead>
                 <th>Estado</th>
                 <th>Cliente</th>
