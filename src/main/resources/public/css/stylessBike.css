@@ -1,0 +1,47 @@
+body{
+    background-image: url("../img/bike-Fppal (2).jpg");
+    font-family: 'Roboto', sans-serif;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+
+h1,h2,h3{
+    color: #ffff;
+}
+
+.label0{
+    color: #ffff;
+}
+
+.container{
+    background-position: center center;
+    width: 50%;
+    scroll-margin-top:70px;
+
+}
+
+.bike{
+    scroll-margin-top:200px;
+}
+
+.category{
+    scroll-margin-top:70px;
+}
+
+.client{
+    scroll-margin-top:70px;
+}
+
+.message{
+    scroll-margin-top:70px;
+}
+
+.reservation{
+    scroll-margin-top:70px;
+}
+
+.userAdmin{
+    scroll-margin-top:70px;
+}

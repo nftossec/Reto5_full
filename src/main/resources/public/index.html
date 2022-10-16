@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,300;1,400;1,700&display=swap');
+    </style>
+    <link rel="stylesheet" href="css/stylessBike.css">
+
+    <title>Alquiler de Bicicletas</title>
+  </head>
+
+  <body>
+  <section class="header" id="header">
+      <div class="container" id="containerHe">
+       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+          <div class="container-fluid">
+        <a class="navbar-brand" href="#">ALQUILER DE BICICLETAS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#bike">BICICLETA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#category">CATEGORIA</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#client">CLIENTE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#message">MENSAJES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#reservation">RESERVAS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#userAdmin">USUARIOS ADMINISTRATIVOS</a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+           <a class="nav-link active" aria-current="page" href="#">INICIO</a>
+      </span>
+        </div>
+      </div>
+    </nav>
+
+  </section>
+
+  <section class="bike" id="bike">
+    <div class="container" id="containerBi">
+    <h1>BICICLETAS MWN</h1>
+      <h2>BICICLETAS</h2>
+        <form>
+          <input type="text" id="idBici" placeholder="Id solo para actualizar" />
+          <input type="text" id="brandBici" placeholder="Ingrese la marca" />
+          <input type="text" id="modelBici" placeholder="Ingrese el modelo" />
+          <input type="text" id="categoryBici" placeholder="Ingrese la categoría"/>
+          <input type="text" id="nameBici" placeholder="Ingrese el nombre"/>
+          <input type="text" id="descriptionBike" placeholder="Ingrese la descripción"/>
+        </form>
+          <br />
+          <button type="button" class="btn btn-success" onclick="guardarInformacion()">Guardar</button>
+          <button type="button" class="btn btn-success" onclick="editarInformacion()">Actualizar</button>
+          <button type="button" class="btn btn-success" id="consultarBici" onclick="traerInformacion()">Consultar</button>
+          <br />
+          <br />
+            <div id="listaBicis"></div>
+    </div>
+  </section>
+  <section class="category" id="category">
+    <div class="container" id="containerCa">
+     <h2>CATEGORIAS</h2>
+        <form>
+          <input type="text" id="idCategory" placeholder="Id solo para actualizar" />
+          <input type="text" id="nameCat" placeholder="Ingrese el nombre" />
+          <br>
+          <br>
+          <textarea name="descripcion" id="descripcionCat" cols="25" rows="6" placeholder="Ingresar descripcion..." style="resize: none"
+                    required
+          ></textarea>
+        </form>
+          <br />
+          <button type="button" class="btn btn-success" onclick="enviarCategoria()">Guardar</button>
+          <button type="button" class="btn btn-success" onclick="updateCategory()">Actualizar</button>
+          <button type="button" class="btn btn-success" id="consultarCat" onclick="obtenerCategoria()">Consultar</button>
+          <br/>
+          <br/>
+          <div id="listaCategoria"></div>
+    </div>
+  </section>
+
+  <section class="client" id="client">
+    <div class="container" id="containerCl">
+    <h2>CLIENTES</h2>
+    <form>
+      <input type="text" id="idCli" placeholder="Id solo para actualizar" />
+      <input type="text" id="nameCli" placeholder="Ingrese el nombre" />
+      <input type="text" id="emailCli" placeholder="Ingrese el correo" />
+      <input type="text" id="ageCli" placeholder="Ingrese la edad" />
+      <input type="text" id="pasCli" placeholder="Ingrese el password" />
+    </form>
+    <br />
+    <button type="button" class="btn btn-success" onclick="enviarCliente()">Guardar</button>
+    <button type="button" class="btn btn-success" onclick="actualizarCliente()">Actualizar</button>
+    <button type="button" class="btn btn-success" id="consultarCli" onclick="obtenerCliente()">Consultar</button>
+    <br />
+    <br />
+    <div id="listaClientes"></div>
+    </div>
+  </section>
+
+  <section class="message" id="message">
+    <div class="container" id="containerMe">
+    <h2>MENSAJES</h2>
+      <input type="number" name="clientId-message" id="clientId-message" placeholder="ID del cliente">
+        <input type="number" name="bikeId-message" id="bikeId-message" placeholder="ID de la bicicleta">
+          <br />
+          <br />
+            <textarea
+                    name="text-message"
+                    id="text-message"
+                    cols="25"
+                    rows="6"
+                    placeholder="Ingresar mensaje..."
+                    style="resize: none"
+                    required
+            ></textarea>
+          <br />
+          <br />
+            <button type="button" class="btn btn-success" id="enviarMensaje" onclick="guardarMensaje()">Guardar</button>
+            <button type="button" class="btn btn-success" id="listarMensajes" onclick="leerMensajes()">Consultar</button>
+          <br />
+          <br />
+            <div id="listaMensajes"></div>
+          <br />
+          <br />
+    </div>
+  </section>
+
+  <section class="reservation" id="reservation">
+    <div class="container" id="containerRe">
+    <h2>RESERVAS</h2>
+      <div id="form-reservas">
+          <form>
+            <input type="number" name="clientId-reservation" id="clientId-reservation" placeholder="ID del cliente">
+            <input type="number" name="bikeId-reservation" id="bikeId-reservation" placeholder="ID de la bicicleta">
+            <br />
+            <br />
+            <label class="label0" for="startDate-reservation">Fecha de inicio: </label>
+            <input type="date" name="startDate-reservation" id="startDate-reservation">
+
+            <label class="label0" for="devolutionDate-reservation">Fecha de entrega: </label>
+            <input type="date" name="devolutionDate-reservation" id="devolutionDate-reservation">
+          </form>
+        </div>
+        <br />
+          <button type="button" class="btn btn-success" id="save-btn-reservation" onclick="saveReservation()">Guardar</button>
+          <button type="button" class="btn btn-success" id="list-btn-reservation" onclick="listReservations()">Consultar</button>
+        <br />
+        <br />
+          <div id="reservationList"></div>
+        <br />
+        <br />
+    </div>
+  </section>
+
+  <section class="userAdmin" id="userAdmin">
+    <div class="container" id="containerUs">
+    <h2>USUARIOS ADMINISTRATIVOS</h2>
+      <form>
+        <input type="text" id="idUsuarioAdmo" placeholder="Id solo para actualizar">
+        <input type="text" id="nombreUsuarioAdmo" placeholder="Ingrese su nombre"/>
+        <input type="text" id="emailUsuarioAdmo" placeholder="Ingrese su correo electrónico"/>
+        <input type="text" id="passwordUsuarioAdmo" placeholder="Ingrese su contraseña"/>
+      </form>
+      <br />
+        <button type="button" class="btn btn-success" onclick="guardarAdmoUser()">Guardar</button>
+        <button type="button" class="btn btn-success" onclick="editarAdmoUser()">Actualizar</button>
+        <button type="button" class="btn btn-success" id="consultarAdmoUser" onclick="getAdmoUser()">Consultar</button>
+      <br />
+      <br />
+      <div id="listaAdmoUser"></div>
+    </div>
+  </section>
+
+    <script src="js/bike.js"></script>
+    <script src="js/client.js"></script>
+    <script src="js/message.js"></script>
+    <script src="js/userAdmin.js"></script>
+    <script src="js/category.js"></script>
+    <script src="js/score.js"></script>
+    <script src="js/reservation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
